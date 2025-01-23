@@ -6,6 +6,16 @@ import { ArrowLeft } from "lucide-react";
 import { AgentDetails } from "@/components/agents/details/agent-details";
 import { useAgents } from "@/hooks/use-agents";
 
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return [
+    { id: "1" },
+    { id: "2" },
+    { id: "3" }
+  ];
+}
+
 export default function AgentDetailsPage({ params }: { params: { id: string }}) {
   const router = useRouter();
   const { agents } = useAgents();
