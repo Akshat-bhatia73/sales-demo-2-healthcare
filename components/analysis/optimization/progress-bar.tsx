@@ -13,9 +13,9 @@ export function ProgressBar({ progress }: ProgressBarProps) {
         <span>Analysis Progress</span>
         <span>{Math.round(progress)}%</span>
       </div>
-      <div className="h-1 bg-slate-800 rounded-full overflow-hidden">
+      <div className="h-1 bg-gray-200 rounded-full overflow-hidden">
         <motion.div
-          className="h-full bg-blue-500"
+          className="h-full bg-green-500"
           initial={{ width: 0 }}
           animate={{ width: `${progress}%` }}
           transition={{ 
