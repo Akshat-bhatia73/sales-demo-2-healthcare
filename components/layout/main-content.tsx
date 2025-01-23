@@ -13,6 +13,7 @@ import { Activity } from "lucide-react";
 import { featuredReports } from "@/lib/data/featured-reports";
 import { actionRecommendations } from "@/lib/data/action-recommendations";
 import { intelligenceFeed } from "@/lib/data/intelligence-feed";
+import { Badge } from "../ui/badge";
 
 export function MainContent() {
   return (
@@ -43,39 +44,39 @@ export function MainContent() {
         </div>
 
         <div className="col-span-4">
-          <div className="space-y-6 sticky top-6">
+          <div className="space-y-[17px] sticky top-6">
             <AgentStatusSection />
             
-            <Card className="bg-slate-900/95 border-slate-800/50 backdrop-blur-xl">
+            <Card className="card">
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <Activity className="w-5 h-5 mr-2 text-blue-400" />
+                  <Activity className="w-6 h-6 mr-2 text-green-500" />
                   Live Intelligence Feed
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <ScrollArea className="h-[600px] pr-4">
+                <ScrollArea className="h-[600px]">
                   {intelligenceFeed.map((item, i) => (
                     <div
                       key={i}
-                      className="mb-4 p-4 rounded-lg bg-slate-800/50 hover:bg-slate-800 transition-all"
+                      className="mb-4 p-4 rounded-lg bg-white border border-gray-200 hover:bg-white transition-all cursor-default hover:shadow-md"
                     >
                       <div className="flex items-start justify-between mb-2">
-                        <span className={`text-xs px-2 py-1 rounded-full ${
-                          item.priority === 'high' ? 'bg-red-500/20 text-red-400' : 'bg-yellow-500/20 text-yellow-400'
+                        <span className={`text-xs px-4 py-1 rounded-full capitalize border ${
+                          item.priority === 'high' ? 'bg-red-100/90 text-red-500 border-red-500' : 'bg-yellow-50/70 text-yellow-600 border-yellow-500'
                         }`}>
                           {item.priority}
                         </span>
-                        <span className="text-xs text-slate-400">{item.time}</span>
+                        <span className="text-xs text-neutral-500">{item.time}</span>
                       </div>
-                      <p className="text-sm mb-2">{item.message}</p>
-                      <div className="flex items-center justify-between text-xs text-slate-400">
-                        <span>{item.source}</span>
+                      <p className="text-sm mb-2 text-neutral-800">{item.message}</p>
+                      <div className="flex items-center justify-between text-xs text-neutral-600">
+                        <span className="font-medium">{item.source}</span>
                         <div className="flex gap-2">
                           {item.tools.map((tool, j) => (
-                            <span key={j} className="bg-slate-800 px-2 py-1 rounded">
+                            <Badge key={j} className="badge hover:shadow-none">
                               {tool}
-                            </span>
+                            </Badge>
                           ))}
                         </div>
                       </div>

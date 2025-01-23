@@ -14,22 +14,22 @@ interface MetricCardProps {
 
 export function MetricCard({ title, value, trend, isPositive, detail, icon: Icon }: MetricCardProps) {
   return (
-    <Card className="bg-slate-900/95 border-slate-800/50 p-4 hover:scale-[1.02] transition-all duration-150">
+    <Card className="card p-4 transition-all duration-150">
       <div className="flex items-start justify-between mb-2">
-        <span className="text-sm font-medium text-slate-400">{title}</span>
-        <Icon className="w-4 h-4 text-slate-400" />
+        <span className="text-sm font-medium text-neutral-600">{title}</span>
+        <Icon className="w-4 h-4 text-neutral-600" />
       </div>
       <div className="text-2xl font-semibold mb-1">{value}</div>
       {trend && (
         <div className={cn(
           "text-sm",
-          isPositive ? "text-green-400" : "text-red-400"
+          isPositive ? "text-green-500" : "text-red-500"
         )}>
           {trend}
         </div>
       )}
       {detail && (
-        <div className="text-sm text-slate-400">{detail}</div>
+        <div className="text-sm text-neutral-600">{detail}</div>
       )}
     </Card>
   );

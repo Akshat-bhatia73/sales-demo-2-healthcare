@@ -8,9 +8,9 @@ export default function HealthcareJourneyLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-950 to-slate-900 text-slate-100">
+    <div className="h-screen flex">
       <Sidebar />
-      <div className="pl-16 lg:pl-64 transition-all duration-300">
+      <div className="px-6 h-screen overflow-auto transition-all duration-300">
         {children}
       </div>
     </div>

@@ -4,20 +4,15 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/layout/logo";
-import {
-  ChevronLeft,
-  FileText,
-  Bot,
-  Zap,
-  Settings,
-  Menu
-} from "lucide-react";
+import { ChevronLeft, FileText, Bot, Zap, Settings, Menu, GitGraph, Share2 } from "lucide-react";
+import Link from "next/link";
 
 const menuItems = [
   { icon: FileText, label: "Reports", href: "#reports" },
-  { icon: Bot, label: "Agents", href: "#agents" },
+  { icon: Bot, label: "Agents", href: "/agents" },
+  { icon: Share2, label: "Workflows", href: "/workflows" },
   { icon: Zap, label: "Automations", href: "#automations" },
-  { icon: Settings, label: "Setup", href: "#setup" }
+  { icon: Settings, label: "Setup", href: "#setup" },
 ];
 
 export function Sidebar() {
@@ -26,23 +21,23 @@ export function Sidebar() {
   return (
     <div
       className={cn(
-        "fixed left-0 top-0 h-screen side-panel transition-all duration-300",
+        "h-screen side-panel transition-all duration-300",
         isCollapsed ? "w-16" : "w-64"
       )}
     >
-      <div className="flex items-center justify-between p-4 border-b border-slate-800/50">
-        {!isCollapsed ? (
-          <Logo />
-        ) : (
-          <div className="w-8 h-8 rounded-full bg-green-500" />
-        )}
+      <div className="flex items-center justify-between px-3 py-4 border-b">
+        <Link href={"/"}>{!isCollapsed && <Logo />}</Link>
         <Button
           variant="ghost"
           size="sm"
-          className="ml-auto"
+          className=""
           onClick={() => setIsCollapsed(!isCollapsed)}
         >
-          {isCollapsed ? <Menu className="h-4 w-4" /> : <ChevronLeft className="h-4 w-4" />}
+          {isCollapsed ? (
+            <Menu className="h-5 w-5" />
+          ) : (
+            <ChevronLeft className="h-4 w-4" />
+          )}
         </Button>
       </div>
 
@@ -52,13 +47,14 @@ export function Sidebar() {
             key={item.label}
             href={item.href}
             className={cn(
-              "flex items-center px-3 py-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-800/50 transition-colors",
-              "group cursor-pointer"
+              "flex items-center px-3 py-3 rounded-lg text-neutral-600 hover:text-neutral-800 hover:bg-gray-200/50 transition-colors",
+              "group cursor-pointer",
+              isCollapsed && "justify-center"
             )}
           >
-            <item.icon className="h-5 w-5 mr-3" />
+            <item.icon className="h-5 w-5" />
             {!isCollapsed && (
-              <span className="text-sm font-medium">{item.label}</span>
+              <span className="text-sm font-medium ml-3">{item.label}</span>
             )}
           </a>
         ))}

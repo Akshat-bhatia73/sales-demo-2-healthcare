@@ -2,13 +2,14 @@
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Plus } from "lucide-react";
 
 const filters = [
   "Enterprise ($1B+)",
   "Technical Decision Makers",
   "High Engagement",
   "Active Pipeline",
-  "CISO Engaged"
+  "CISO Engaged",
 ];
 
 export function AccountsFilters() {
@@ -17,14 +18,14 @@ export function AccountsFilters() {
       {filters.map((filter) => (
         <Badge
           key={filter}
-          variant="outline"
-          className="bg-blue-500/10 text-blue-400 border-blue-500/30 hover:bg-blue-500/20 cursor-pointer"
+          className="badge px-4 py-1"
         >
           {filter}
         </Badge>
       ))}
-      <Button variant="ghost" size="sm" className="text-slate-400">
-        + Add Filter
+      <Button variant="outline" size="sm">
+        <Plus className="h-4 w-4 mr-1" />
+        Add Filter
       </Button>
     </div>
   );

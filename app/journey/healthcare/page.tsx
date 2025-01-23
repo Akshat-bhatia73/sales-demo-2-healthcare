@@ -8,39 +8,53 @@ import { JourneyFlow } from "@/components/journey/journey-flow";
 import { InsightsPanel } from "@/components/journey/insights-panel";
 import { StageAnalysis } from "@/components/journey/stage-analysis";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ChevronLeft } from "lucide-react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 export default function HealthcareJourneyPage() {
   const router = useRouter();
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-950 to-slate-900 text-slate-100">
-      <div className="max-w-[1400px] mx-auto p-6 space-y-6">
-        <div className="flex items-center justify-between mb-6">
-          <div className="flex items-center gap-4">
-            <Button 
-              variant="ghost" 
-              onClick={() => router.push("/")}
-              className="flex items-center gap-2 text-slate-300 hover:text-slate-100"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              Back to Mission Control
-            </Button>
-            <JourneyHeader />
-          </div>
+    <div className="max-w-[1600px] mx-auto space-y-6 pt-6">
+      <div className="flex items-center justify-between mb-6">
+        <div className="flex items-start gap-4">
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger>
+                <Button
+                  variant="ghost"
+                  size={"icon"}
+                  className="bg-gray-200"
+                  onClick={() => router.push("/")}
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent className="bg-white border-gray-200 text-xs">
+                <span>Back to Mission Control</span>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+
+          <JourneyHeader />
         </div>
-        <div className="mb-8">
-          <SearchCommand />
+      </div>
+      <div className="mb-8">
+        <SearchCommand />
+      </div>
+      <MetricsGrid />
+      <div className="grid grid-cols-12 gap-6">
+        <div className="col-span-8">
+          <JourneyFlow />
+          <StageAnalysis />
         </div>
-        <MetricsGrid />
-        <div className="grid grid-cols-12 gap-6">
-          <div className="col-span-8">
-            <JourneyFlow />
-            <StageAnalysis />
-          </div>
-          <div className="col-span-4">
-            <InsightsPanel />
-          </div>
+        <div className="col-span-4">
+          <InsightsPanel />
         </div>
       </div>
     </div>

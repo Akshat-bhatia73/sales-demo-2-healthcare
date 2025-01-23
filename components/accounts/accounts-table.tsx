@@ -39,10 +39,10 @@ const accounts = [
 
 export function AccountsTable() {
   return (
-    <div className="rounded-lg border border-slate-800/50 bg-slate-900/95">
+    <div className="rounded-lg border card">
       <Table>
         <TableHeader>
-          <TableRow className="border-slate-800/50">
+          <TableRow className="">
             <TableHead>Account</TableHead>
             <TableHead>Revenue</TableHead>
             <TableHead>Stage</TableHead>
@@ -53,18 +53,18 @@ export function AccountsTable() {
         </TableHeader>
         <TableBody>
           {accounts.map((account) => (
-            <TableRow key={account.name} className="border-slate-800/50">
+            <TableRow key={account.name} className="">
               <TableCell className="font-medium">{account.name}</TableCell>
               <TableCell>{account.revenue}</TableCell>
               <TableCell>
-                <Badge variant="outline" className="bg-blue-500/10 text-blue-400 border-blue-500/30">
+                <Badge variant="outline" className="">
                   {account.stage}
                 </Badge>
               </TableCell>
               <TableCell>
                 <div className="flex gap-1">
                   {account.decisionMakers.map((role) => (
-                    <Badge key={role} variant="secondary" className="bg-slate-800/50">
+                    <Badge key={role} className="bg-gray-100 border border-gray-400 py-1 text-neutral-800">
                       {role}
                     </Badge>
                   ))}
@@ -74,14 +74,14 @@ export function AccountsTable() {
                 <Badge 
                   variant="outline"
                   className={account.engagement === "High" 
-                    ? "bg-green-500/10 text-green-400 border-green-500/30"
-                    : "bg-yellow-500/10 text-yellow-400 border-yellow-500/30"
+                    ? "bg-green-500/10 text-green-600 border-green-500/30"
+                    : "bg-yellow-500/10 text-yellow-600 border-yellow-500/30"
                   }
                 >
                   {account.engagement}
                 </Badge>
               </TableCell>
-              <TableCell className="text-slate-400">{account.lastActivity}</TableCell>
+              <TableCell className="text-neutral-600">{account.lastActivity}</TableCell>
             </TableRow>
           ))}
         </TableBody>

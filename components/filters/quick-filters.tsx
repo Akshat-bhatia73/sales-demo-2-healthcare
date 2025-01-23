@@ -27,7 +27,7 @@ export function QuickFilters() {
   const clearFilters = () => setActiveFilters([]);
 
   return (
-    <div className="flex items-center gap-2 mx-4 mb-6 overflow-x-auto pb-2">
+    <div className="flex items-center gap-2 mb-6 py-2 overflow-x-auto">
       {filterOptions.map((filter) => (
         <FilterPill
           key={filter}
@@ -41,7 +41,7 @@ export function QuickFilters() {
           variant="ghost"
           size="sm"
           onClick={clearFilters}
-          className="text-slate-400 hover:text-slate-300"
+          className="text-neutral-600 hover:text-neutral-800"
         >
           <X className="w-4 h-4 mr-1" />
           Clear
