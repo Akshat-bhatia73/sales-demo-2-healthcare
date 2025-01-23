@@ -20,39 +20,39 @@ export function AgentStatusCard({
   progress,
   task,
   startTime,
-  tools
+  tools,
 }: AgentStatusCardProps) {
   return (
-    <Card className="bg-slate-800/50 border-slate-700/50 mb-4">
+    <Card className="bg-white border-gray-200 mb-4">
       <CardContent className="p-4">
         <div className="flex items-start justify-between mb-3">
           <div className="flex items-center">
-            <Bot className="w-4 h-4 mr-2 text-blue-400" />
+            <Bot className="w-5 h-5 mr-2 text-green-500" />
             <h3 className="font-medium text-sm">{name}</h3>
           </div>
           <Badge
             variant="outline"
-            className="bg-blue-500/10 text-blue-400 border-blue-400/30"
+            className="bg-green-100/10 cursor-default text-green-500 border-green-500"
           >
             {status}
           </Badge>
         </div>
-        
+
         <Progress value={progress} className="h-1 mb-3" />
-        
-        <p className="text-sm text-slate-400 mb-3">{task}</p>
-        
-        <div className="flex items-center text-xs text-slate-500 mb-3">
-          <Clock className="w-3 h-3 mr-1" />
-          {startTime}
+
+        <p className="text-sm text-neutral-700 mb-3">{task}</p>
+
+        <div className="flex items-center text-xs text-neutral-600 mb-3">
+          <Clock className="w-4 h-4 mr-1" />
+          <span className="mt-0.5">{startTime}</span>
         </div>
-        
+
         <div className="flex flex-wrap gap-2">
           {tools.map((tool) => (
             <Badge
               key={tool}
               variant="secondary"
-              className="bg-slate-900/50 text-xs"
+              className="badge"
             >
               {tool}
             </Badge>

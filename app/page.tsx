@@ -5,12 +5,10 @@ import { MainContent } from "@/components/layout/main-content";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-950 to-slate-900 text-slate-100">
+    <div className="h-screen max-w-[1600px] mx-auto overflow-hidden bg-gradient-to-b flex">
       <Sidebar />
-      <div className="pl-16 lg:pl-64 transition-all duration-300">
-        <div className="max-w-[1400px] mx-auto p-6">
+      <div className="p-6 h-screen overflow-auto w-full transition-all duration-300 text-neutral-800">
           <MainContent />
-        </div>
       </div>
     </div>
   );

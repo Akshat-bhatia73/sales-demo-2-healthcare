@@ -31,7 +31,7 @@ const metrics = [
 
 export function MetricsBar() {
   return (
-    <div className="grid grid-cols-4 gap-4 mx-4 my-6">
+    <div className="grid grid-cols-4 gap-4 mx-1 my-6">
       {metrics.map((metric, i) => (
         <MetricCard key={i} {...metric} />
       ))}
