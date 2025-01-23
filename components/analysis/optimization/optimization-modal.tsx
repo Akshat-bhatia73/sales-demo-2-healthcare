@@ -61,7 +61,7 @@ export function OptimizationModal({ isOpen, onClose, actionType }: OptimizationM
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-[800px] max-h-[80vh] modal-gradient border-slate-700/30 backdrop-blur-xl overflow-hidden">
+      <DialogContent className="max-w-[800px] max-h-[80vh] bg-white overflow-auto">
         <DialogHeader>
           <DialogTitle>
             {actionType === "healthcare" ? "Optimize Enterprise Healthcare Campaigns" :
