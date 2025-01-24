@@ -24,10 +24,10 @@ export function StrategyConfirmation({ onConfirm }: StrategyConfirmationProps) {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="p-4 rounded-lg bg-slate-800/50"
+      className="p-4 rounded-lg card border bg-gray-100"
     >
       <div className="flex items-start gap-3">
-        <Target className="w-4 h-4 mt-1 text-blue-400" />
+        <Target className="w-4 h-4 mt-1 text-green-500" />
         <div className="space-y-3">
           <p className="text-sm">Based on your data, I'm focusing on enterprise accounts ($1B+)</p>
 
@@ -51,7 +51,7 @@ export function StrategyConfirmation({ onConfirm }: StrategyConfirmationProps) {
               variant="ghost"
               size="sm"
               onClick={() => onConfirm(selected)}
-              className="text-blue-400 hover:text-blue-300"
+              className="text-green-500 hover:text-green-400"
             >
               <Check className="w-4 h-4 mr-2" />
               Confirm Strategy

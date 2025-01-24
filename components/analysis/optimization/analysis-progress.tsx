@@ -42,10 +42,10 @@ export function AnalysisProgress({ progress, waitingForInput, onUserInput, actio
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="p-6 border border-gray-200 rounded-lg bg-gradient-to-br from-white/70 to-gray-100/50"
+        className="p-6 rounded-lg card border"
       >
         <div className="flex items-start gap-3">
-          <Icon className="w-5 h-5 mt-0.5 text-neutral-600 animate-pulse" />
+          <Icon className="w-5 h-5 mt-0.5 text-green-600 animate-pulse" />
           <div className="space-y-2">
             <p className="text-sm font-medium">{currentStage.message}</p>
             <p className="text-xs text-neutral-600">{currentStage.detail}</p>

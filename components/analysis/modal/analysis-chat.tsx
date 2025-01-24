@@ -59,15 +59,15 @@ export function AnalysisChat({ type }: AnalysisChatProps) {
 
   return (
     <div className="flex flex-col h-full">
-      <div className="p-4 border-b border-slate-800">
-        <Command className="rounded-lg border border-slate-800">
+      <div className="p-4 border-b">
+        <Command className="rounded-lg border">
           <div className="flex items-center px-3 py-2">
-            <Search className="w-4 h-4 mr-2 text-slate-400" />
+            <Search className="w-4 h-4 mr-2 text-neutral-600" />
             <input
               placeholder="Ask about this analysis..."
               className="flex-1 bg-transparent outline-none text-sm"
             />
-            <Sparkles className="w-4 h-4 text-blue-400" />
+            <Sparkles className="w-4 h-4 text-green-500" />
           </div>
         </Command>
       </div>
@@ -77,7 +77,7 @@ export function AnalysisChat({ type }: AnalysisChatProps) {
           {suggestedQuestions[type].map((question, i) => (
             <button
               key={i}
-              className="w-full text-left p-2 text-sm text-slate-400 hover:bg-slate-800/50 rounded-lg"
+              className="w-full text-left p-2 text-sm text-neutral-600 hover:bg-neutral-200/50 rounded-lg"
               onClick={() => handleQuestionClick(question)}
             >
               {question}
@@ -95,14 +95,14 @@ export function AnalysisChat({ type }: AnalysisChatProps) {
                 exit={{ opacity: 0, y: -10 }}
                 className={`p-3 rounded-lg text-sm ${
                   msg.type === "question" 
-                    ? "bg-slate-800/50" 
-                    : "bg-blue-500/10 border border-blue-500/20"
+                    ? "bg-neutral-200/40" 
+                    : "bg-green-400/10 border border-green-500/20"
                 }`}
               >
                 {msg.type === "answer" && (
-                  <div className="flex items-center gap-2 mb-2 text-blue-400">
+                  <div className="flex items-center gap-2 mb-2 text-green-600">
                     <Bot className="w-4 h-4" />
-                    <span className="text-xs">AI Analysis</span>
+                    <span className="text-xs font-semibold">AI Analysis</span>
                   </div>
                 )}
                 <div className="whitespace-pre-wrap">{msg.text}</div>
@@ -114,7 +114,7 @@ export function AnalysisChat({ type }: AnalysisChatProps) {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="flex items-center gap-2 text-slate-400 text-sm"
+              className="flex items-center gap-2 text-neutral-600 text-sm"
             >
               <Bot className="w-4 h-4 animate-pulse" />
               Analyzing...

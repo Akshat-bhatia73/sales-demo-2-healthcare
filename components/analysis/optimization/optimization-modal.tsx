@@ -5,6 +5,8 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { AnalysisProgress } from "./analysis-progress";
 import { ExecutionPanel } from "./execution-panel";
 import { insights } from "@/lib/data/analysis";
+import { Button } from "@/components/ui/button";
+import { X } from "lucide-react";
 
 interface OptimizationModalProps {
   isOpen: boolean;
@@ -64,13 +66,20 @@ export function OptimizationModal({ isOpen, onClose, actionType }: OptimizationM
       <DialogContent className="max-w-[800px] max-h-[80vh] bg-white overflow-auto">
         <DialogHeader>
           <DialogTitle>
-            {actionType === "healthcare" ? "Optimize Enterprise Healthcare Campaigns" :
-             actionType === "nurture" ? "Update Enterprise Nurture Sequence" :
-             "Scale Technical Content Production"}
+            <div className="flex items-center justify-between">
+              <h1>
+                {actionType === "healthcare" ? "Optimize Enterprise Healthcare Campaigns" :
+                actionType === "nurture" ? "Update Enterprise Nurture Sequence" :
+                "Scale Technical Content Production"}
+              </h1>
+              <Button variant="outline" size="icon" onClick={onClose}>
+                <X className="w-4 h-4"/>
+              </Button>
+             </div>
           </DialogTitle>
         </DialogHeader>
 
-        <div className="p-6 space-y-6">
+        <div className="space-y-6">
           {!analysisComplete ? (
             <AnalysisProgress
               progress={progress}
