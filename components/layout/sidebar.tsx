@@ -8,7 +8,7 @@ import { ChevronLeft, FileText, Bot, Zap, Settings, Menu, GitGraph, Share2 } fro
 import Link from "next/link";
 
 const menuItems = [
-  { icon: FileText, label: "Reports", href: "#reports" },
+  { icon: FileText, label: "Reports", href: "/reports" },
   { icon: Bot, label: "Agents", href: "/agents" },
   { icon: Share2, label: "Workflows", href: "/workflows" },
   { icon: Zap, label: "Automations", href: "#automations" },
