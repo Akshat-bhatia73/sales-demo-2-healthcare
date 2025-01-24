@@ -22,11 +22,11 @@ const subtitles = {
 
 export function AnalysisHeader({ type, onClose }: AnalysisHeaderProps) {
   return (
-    <div className="p-6 border-b border-slate-800">
+    <div className="px-6 border-b">
       <div className="flex items-start justify-between">
         <div>
           <h2 className="text-2xl font-semibold mb-2">{titles[type]}</h2>
-          <p className="text-slate-400">{subtitles[type]}</p>
+          <p className="text-neutral-600">{subtitles[type]}</p>
         </div>
         <div className="flex gap-2">
           <Button variant="ghost" size="icon">

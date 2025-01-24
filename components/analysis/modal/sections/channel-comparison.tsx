@@ -28,7 +28,7 @@ const channelData = {
 
 export function ChannelComparison({ isExpanded, onToggle }: ChannelComparisonProps) {
   return (
-    <Card className="bg-slate-800/50 border-slate-700/50 overflow-hidden">
+    <Card className="card overflow-hidden">
       <motion.div
         className="p-4 cursor-pointer"
         onClick={onToggle}
@@ -51,13 +51,13 @@ export function ChannelComparison({ isExpanded, onToggle }: ChannelComparisonPro
         <div className="p-4 pt-0 space-y-4">
           {Object.entries(channelData.linkedin).map(([key, value], i) => (
             <div key={key} className="grid grid-cols-3 gap-4">
-              <div className="text-sm text-slate-400 capitalize">
+              <div className="text-sm text-neutral-600 capitalize">
                 {key.replace(/([A-Z])/g, " $1").trim()}
               </div>
-              <div className="text-sm font-medium text-blue-400">
+              <div className="text-sm font-medium text-green-600">
                 LinkedIn: {value}
               </div>
-              <div className="text-sm font-medium text-slate-400">
+              <div className="text-sm font-medium text-neutral-600">
                 SEM: {channelData.sem[key]}
               </div>
             </div>

@@ -15,8 +15,8 @@ interface AnalysisModalProps {
 export function AnalysisModal({ isOpen, onClose, analysisType }: AnalysisModalProps) {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-[90vw] w-[1200px] h-[80vh] p-0 modal-gradient border-slate-700/30 backdrop-blur-xl">
-        <DialogHeader>
+      <DialogContent className="max-w-[90vw] w-[1200px] h-[80vh] p-0 py-4 bg-white overflow-y-auto">
+        <DialogHeader className="hidden">
           <DialogTitle className="sr-only">Analysis View</DialogTitle>
         </DialogHeader>
         <div className="flex flex-col h-full">
@@ -25,7 +25,7 @@ export function AnalysisModal({ isOpen, onClose, analysisType }: AnalysisModalPr
             <div className="flex-1 overflow-y-auto">
               <AnalysisContent type={analysisType} />
             </div>
-            <div className="w-[350px] border-l border-slate-800">
+            <div className="w-[350px] border-l">
               <AnalysisChat type={analysisType} />
             </div>
           </div>

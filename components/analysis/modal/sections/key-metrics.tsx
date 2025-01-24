@@ -85,13 +85,13 @@ export function KeyMetrics({ type }: KeyMetricsProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: i * 0.1 }}
         >
-          <Card className="bg-slate-800/50 border-slate-700/50 p-4">
+          <Card className="card p-4">
             <div className="flex items-center gap-2 mb-2">
-              <metric.icon className="w-4 h-4 text-blue-400" />
-              <span className="text-sm text-slate-400">{metric.label}</span>
+              <metric.icon className="w-4 h-4 text-neutral-600" />
+              <span className="text-sm text-neutral-600">{metric.label}</span>
             </div>
             <div className="text-2xl font-semibold mb-1">{metric.value}</div>
-            <div className="text-sm text-green-400">{metric.trend}</div>
+            <div className="text-sm text-green-600">{metric.trend}</div>
           </Card>
         </motion.div>
       ))}
