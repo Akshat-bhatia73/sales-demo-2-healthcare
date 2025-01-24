@@ -18,10 +18,10 @@ export function AssumptionValidation({ onValidate }: AssumptionValidationProps) 
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="p-4 rounded-lg bg-blue-500/10 border border-blue-500/20"
+      className="p-4 rounded-lg bg-green-400/10 border border-green-500/20"
     >
       <div className="flex items-start gap-3">
-        <Info className="w-4 h-4 mt-1 text-blue-400" />
+        <Info className="w-4 h-4 mt-1 text-green-600" />
         <div className="space-y-3">
           <p className="text-sm">
             I assume CISO engagement is a priority for healthcare enterprise deals. Correct?
@@ -33,7 +33,7 @@ export function AssumptionValidation({ onValidate }: AssumptionValidationProps) 
                 variant="ghost"
                 size="sm"
                 onClick={() => onValidate(true)}
-                className="text-green-400 hover:text-green-300"
+                className="text-green-600 hover:text-green-400"
               >
                 <Check className="w-4 h-4 mr-2" />
                 Yes, continue analysis
@@ -42,7 +42,7 @@ export function AssumptionValidation({ onValidate }: AssumptionValidationProps) 
                 variant="ghost"
                 size="sm"
                 onClick={() => setShowInput(true)}
-                className="text-slate-400 hover:text-slate-300"
+                className="text-neutral-900 hover:text-neutral-600"
               >
                 <X className="w-4 h-4 mr-2" />
                 No, adjust focus
@@ -54,13 +54,13 @@ export function AssumptionValidation({ onValidate }: AssumptionValidationProps) 
                 value={feedback}
                 onChange={(e) => setFeedback(e.target.value)}
                 placeholder="Help me understand your priority personas"
-                className="bg-slate-800/50 border-slate-700"
+                className="bg-transparent border-green-500 text-green-600 ring-0 ring-none focus:ring-0 focus:outline-none placeholder:text-green-500"
               />
               <Button
-                variant="ghost"
+                variant="outline"
                 size="sm"
                 onClick={() => onValidate(false, feedback)}
-                className="text-blue-400 hover:text-blue-300"
+                className="text-green-600 hover:text-green-400 border-green-500 hover:bg-gray-100/20"
               >
                 Update Analysis
               </Button>

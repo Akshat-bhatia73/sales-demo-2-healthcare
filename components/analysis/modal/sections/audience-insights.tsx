@@ -32,7 +32,7 @@ const insights = [
 
 export function AudienceInsights({ isExpanded, onToggle }: AudienceInsightsProps) {
   return (
-    <Card className="bg-slate-800/50 border-slate-700/50 overflow-hidden">
+    <Card className="card overflow-hidden">
       <motion.div
         className="p-4 cursor-pointer"
         onClick={onToggle}
@@ -64,15 +64,15 @@ export function AudienceInsights({ isExpanded, onToggle }: AudienceInsightsProps
               <h4 className="font-medium">{insight.title}</h4>
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-1">
-                  <div className="text-sm text-blue-400">LinkedIn</div>
+                  <div className="text-sm font-medium text-green-600">LinkedIn</div>
                   <div className="text-sm">{insight.linkedin}</div>
                 </div>
                 <div className="space-y-1">
-                  <div className="text-sm text-slate-400">SEM</div>
+                  <div className="text-sm text-neutral-600">SEM</div>
                   <div className="text-sm">{insight.sem}</div>
                 </div>
               </div>
-              <div className="text-sm text-blue-400 mt-2">
+              <div className="text-sm font-medium text-green-600 mt-2">
                 {insight.highlight}
               </div>
             </motion.div>
